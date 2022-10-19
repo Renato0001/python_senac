@@ -1,7 +1,11 @@
 from pessoa import Pessoa
 
-p1 = Pessoa('Luiz', 29)
-p2 = Pessoa('João', 32)
+nome = input("Digite o nome da pessoa :")
+datanasc = float(input("Digite ano de nascimento :"))
+altura = float(input("Digite a altura :"))
 
-print(p1.get_ano_nascimento())
-print(p2.get_ano_nascimento())
+pessoa = Pessoa(nome, datanasc, altura)
+
+print("O nome da pessoa é", pessoa.get_nome())
+print("A idade  é", pessoa.idade1())
+print("A altura da pessoa é: ", pessoa.get_altura())

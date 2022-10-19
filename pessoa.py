@@ -1,53 +1,33 @@
-from datetime import datetime
-
 class Pessoa:
-    ano_atual = int(datetime.strftime(datetime.now(), '%Y'))
+    def __init__(self, nome, datanasc, altura):
+        self.__nome = nome
+        self.__datanasc = datanasc
+        self.__altura = altura
 
-    def __init__(self, nome, idade, comendo=False, falando=False):
-       self.nome = nome
-       self.idade = idade
-       self.comendo = comendo
-       self.falando = falando
+    def get_nome(self):
+        return self.__nome
 
-    def falar(self, assunto):
-        if self.comendo:
-            print(f'{self.nome} não pode falar comendo.')
-            return
+    def set_nome(self, nome):
+        self.__nome = nome
 
-        if self.falando:
-            print(f'{self.nome} já está falando.')
-            return
+    def get_datanasc(self):
+        return self.__datanasc
 
-        print(f'{self.nome} está falando sobre {assunto}.')
-        self.falando = True
+    def set_datanasc(self, datanasc):
+        self.__datanasc = datanasc
+    
+    def get_altura(self):
+        return self.__altura
 
-    def parar_falar(self):
-        if not self.falando:
-            print(f'{self.nome} não está falando')
-            return
+    def set_altura(self, altura):
+        self.__altura = altura
 
-        print(f'{self.nome} parou de falar.')
-        self.falando = False
+    def idade_atual(self):
+        nova_idade = 2022
+        return nova_idade
 
-    def comer(self, alimento):
-        if self.comendo:
-            print(f'{self.nome} já está comendo.')
-            return
+    def idade1(self):
+        idade_nova = self.idade_atual() - self.get_datanasc()
+        return idade_nova
 
-        if self.falando:
-            print(f'{self.nome} não pode comer falando.')
-            return
-
-        print(f'{self.nome} está comendo {alimento}.')
-        self.comendo = True
-
-    def parar_comer(self):
-        if not self.comendo:
-            print(f'{self.nome} não está comendo.')
-            return
-
-        print(f'{self.nome} parou de comer.')
-        self.comendo = False
-
-    def get_ano_nascimento(self):
-        return self.ano_atual - self.idade
+        
