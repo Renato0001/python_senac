@@ -1,4 +1,4 @@
-from reajuste_salario import  ReajusteSalarial
+from salario import  ReajusteSalarial
 
 calculo_do_reajuste = ReajusteSalarial(699, 0.15)
 
